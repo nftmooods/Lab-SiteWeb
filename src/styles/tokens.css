@@ -1,0 +1,65 @@
+/* Mooods — design tokens v2 (September 2026)
+   One role per colour. Never all of them at once. */
+
+:root {
+  /* ---- Light world: the notebook page (style « Carnet », see docs/02) ---- */
+  --paper:        #F2EBDD;  /* cream paper — the torn notebook bands */
+  --paper-2:      #E8DFCD;  /* denser paper, fold shadows */
+  --paper-ink:    #241B12;  /* text on paper: very dark brown, never black */
+  --paper-ink-2:  #5A4A3A;  /* secondary text on paper */
+  --pencil:       #9A8C7A;  /* pencil line-art, rules, background sketches */
+
+  /* ---- Structural ink (logo, dark-world ground, UI text on cool surfaces) ---- */
+  --ink:          #0E2237;
+  --ink-2:        #3B4F63;
+  --ink-3:        #7A8A9A;
+  --line:         #CFD9E3;
+
+  /* ---- Accents: one role each ---- */
+  --cyan:         #2FD3E6;  /* technology, information, exploration (surfaces) */
+  --cyan-deep:    #0FA9BD;  /* cyan TEXT on light backgrounds — short labels only */
+  --orange:       #F28C1E;  /* action, creation, CTA — one orange button per screen */
+  --orange-deep:  #C96A08;  /* hover, orange text on light */
+  --red:          #D8413F;  /* error, alert — <= 5% of the surface */
+  --glow:         #3A9BFF;  /* focus, active state, LIVE, M3ODS's eyes */
+  --amber:        #C07A2E;  /* material, leather, object, texture */
+
+  /* ---- Dark world: the explored universe (hero, 3D scenes, transitions) ---- */
+  --night:        #0B1826;
+  --night-2:      #112238;
+  --night-line:   #22384F;
+  --night-ink:    #EEF4F8;
+  --night-ink-2:  #B7C6D4;
+  --night-serif:  #BFEAF2;  /* the Instrument Serif accent phrase on dark */
+
+  /* ---- Type ---- */
+  --font-display: "Bricolage Grotesque", "Arial Black", Impact, sans-serif;
+  --font-serif:   "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-body:    "Onest", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono:    "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+  --font-hand:    "Caveat", "Segoe Print", cursive;   /* margin annotations */
+
+  /* Type scale (fluid where it matters) */
+  --text-hero:    clamp(34px, 6.4vw, 92px);   /* display 700, -0.035em, lh .98 */
+  --text-h2:      clamp(28px, 4vw, 56px);     /* display 700, -0.03em,  lh 1.05 */
+  --text-h3:      clamp(22px, 2vw, 30px);     /* display 700, -0.02em */
+  --text-lead:    clamp(16px, 1.6vw, 20px);                        /* body 400, lh 1.55 */
+  --text-body:    16px;                        /* body 400, lh 1.6, 60-65ch */
+  --text-small:   15px;
+  --text-label:   12px;                        /* mono, uppercase, .16em */
+
+  /* ---- Shape ---- */
+  --radius-s:     8px;
+  --radius-m:     12px;
+  --radius-l:     20px;
+  --radius-xl:    28px;   /* image frames, large panels */
+  --radius-pill:  999px;  /* buttons, nav, chips */
+
+  --shadow:       0 10px 30px -12px rgba(14, 34, 55, 0.25);
+  --shadow-night: 0 18px 50px -20px rgba(0, 0, 0, 0.65);
+
+  /* ---- Rhythm ---- */
+  --gap-s: 10px; --gap-m: 24px; --gap-l: 48px;
+  --section-y: 160px;   /* vertical breathing between sections (desktop) */
+  --page-x: 120px;      /* page gutter (desktop); 200px for centred reading blocks */
+}
