@@ -112,8 +112,6 @@ export function usePolaroidRail() {
     const preventDrag = (event: DragEvent) => event.preventDefault();
     const onTouchEnd = () => resumeAutoAfter(900);
     const onWheel = () => { stop(); pauseAuto(); resumeAutoAfter(1200); };
-    const onEnter = () => pauseAuto();
-    const onLeave = () => { if (!down) resumeAutoAfter(400); };
     rail.addEventListener("pointerdown", onDown);
     window.addEventListener("pointermove", onMove);
     window.addEventListener("pointerup", release);
@@ -124,8 +122,6 @@ export function usePolaroidRail() {
     rail.addEventListener("dragstart", preventDrag);
     rail.addEventListener("scroll", schedule, { passive: true });
     rail.addEventListener("wheel", onWheel, { passive: true });
-    rail.addEventListener("pointerenter", onEnter);
-    rail.addEventListener("pointerleave", onLeave);
     const resize = new ResizeObserver(schedule);
     resize.observe(rail);
     paint();
@@ -143,8 +139,6 @@ export function usePolaroidRail() {
       rail.removeEventListener("dragstart", preventDrag);
       rail.removeEventListener("scroll", schedule);
       rail.removeEventListener("wheel", onWheel);
-      rail.removeEventListener("pointerenter", onEnter);
-      rail.removeEventListener("pointerleave", onLeave);
     };
   }, []);
   return ref;
