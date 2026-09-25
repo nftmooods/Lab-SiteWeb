@@ -72,7 +72,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 32px; }
 .photo-string .polaroid:nth-child(3) { transform: rotate(-4deg); }
 .photo-string .polaroid:hover { transform: rotate(0deg) translateY(-5px); }
 .photo-note { padding-left: 18px; transform: rotate(-8deg); }
-.workshop-scene { padding: 140px 8% 50px; min-height: 760px; display: flex; flex-direction: column; }
+.workshop-scene { padding: 120px 8% 40px; min-height: 760px; display: flex; flex-direction: column; }
 .workshop-scene .scene-image { object-position: center; }
 .workshop-shade { position: absolute; inset: 0; z-index: -2; background: linear-gradient(180deg,var(--scene-ink),#07152235 25%,#0715224d 45%,#071522eb 88%), linear-gradient(90deg,#071522cb, transparent 90%); }
 .workshop-projects { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: auto; padding-top: 80px; max-width: 960px; width: 100%; }
@@ -208,7 +208,7 @@ button.polaroid { appearance: none; border: 0; color: inherit; font: inherit; te
 
 .workshop-scene { min-height: auto; padding-inline: 6%; }
 .workshop-games { width: min(1180px, 94vw); margin: 24px auto 0; overflow: hidden; border: 1px solid #ffffff26; border-radius: 24px; background: #070f1f; box-shadow: 0 24px 70px #0005; }
-.workshop-games iframe { display: block; width: 100%; height: min(500px, 58vh); border: 0; color-scheme: dark; }
+.workshop-games iframe { display: block; width: 100%; height: min(640px, 78vh); border: 0; color-scheme: dark; }
 @media (max-width: 680px) {
   .workshop-games { margin-top: 28px; border-radius: 18px; }
   .workshop-games iframe { height: 880px; }
