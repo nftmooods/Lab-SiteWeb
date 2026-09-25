@@ -5,6 +5,7 @@ import { NOTES } from "../content/site";
 import { GogglesMark } from "../components/GogglesMark";
 import { LabLogo } from "../components/LabLogo";
 import { CustomCursor } from "../components/CustomCursor";
+import { StarField } from "../components/StarField";
 import "../styles/journal.css";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
@@ -88,7 +89,7 @@ export default function Home() {
             <iframe src="/atelier-jeux.html" title="Les jeux du labo : RPG, plante, OXO et puzzle de code" sandbox="allow-scripts" loading="lazy" />
           </div>
         </section>
-        <section className="scene closing-scene" aria-labelledby="closing-title"><img className="scene-image" src="/assets/scenes/play.jpg" alt="Mooods et son compagnon robot regardent le ciel étoilé" loading="lazy" /><div className="closing-shade" /><div className="scene-copy"><h2 id="closing-title">On se retrouve<br /><em>à la prochaine idée ?</em></h2><a className="journal-button" href="https://x.com/nftmooods" target="_blank" rel="noopener noreferrer">Discuter avec Martin <Arrow /></a></div><p className="handwritten closing-note">Le carnet est juste en dessous ↓</p></section>
+        <section className="scene closing-scene" aria-labelledby="closing-title"><img className="scene-image" src="/assets/scenes/play.jpg" alt="Mooods et son compagnon robot regardent le ciel étoilé" loading="lazy" /><div className="closing-shade" /><StarField /><div className="scene-copy"><h2 id="closing-title">On se retrouve<br /><em>à la prochaine idée ?</em></h2><a className="journal-button" href="https://x.com/nftmooods" target="_blank" rel="noopener noreferrer">Discuter avec Martin <Arrow /></a></div><p className="handwritten closing-note">Le carnet est juste en dessous ↓</p></section>
         <section id="carnet" className="paper notebook-section" aria-labelledby="notebook-title"><div className="paper-inner">
           <div className="notebook-header"><div><Chapter number="04">Le journal</Chapter><h2 id="notebook-title">Mes notes <em>du labo.</em></h2></div><p className="handwritten">Pour les curieux.<span aria-hidden="true">⤵</span></p></div>
           <div className="journal-entries">{NOTES.map(note => <details className="journal-entry" key={note.number} id={`note-${note.number}`}><summary><span className="note-number">NOTE<span>{note.number}</span></span><span className="note-main"><span className="note-meta">{note.meta}</span><span className="note-title">{note.title}</span></span><span className="note-open" aria-hidden="true">+</span></summary><div className="note-body"><p>{note.takeaway}</p><p className="handwritten">Bon, ça, c’est noté. — Mooods</p></div></details>)}</div>

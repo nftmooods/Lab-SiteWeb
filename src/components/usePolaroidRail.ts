@@ -16,6 +16,20 @@ export function usePolaroidRail() {
     let time = 0;
     let velocity = 0;
     let origin = 0;
+    let autoFrame = 0;
+    let autoLast = 0;
+    let autoDirection: 1 | -1 = 1;
+    let autoPaused = false;
+    let resumeTimer = 0;
+    const AUTO_SPEED = 0.026;
+    const pauseAuto = () => {
+      autoPaused = true;
+      if (resumeTimer) { window.clearTimeout(resumeTimer); resumeTimer = 0; }
+    };
+    const resumeAutoAfter = (delay: number) => {
+      if (resumeTimer) window.clearTimeout(resumeTimer);
+      resumeTimer = window.setTimeout(() => { autoPaused = false; }, delay);
+    };
     const paint = () => {
       frame = 0;
       const centre = rail.scrollLeft + rail.clientWidth / 2;
@@ -34,8 +48,24 @@ export function usePolaroidRail() {
     };
     const schedule = () => { if (!frame) frame = requestAnimationFrame(paint); };
     const stop = () => { cancelAnimationFrame(inertia); inertia = 0; };
+    const autoStep = (now: number) => {
+      if (!autoLast) autoLast = now;
+      const dt = Math.min(48, now - autoLast);
+      autoLast = now;
+      if (!autoPaused && !down && !dragged && !reduced.matches) {
+        const max = rail.scrollWidth - rail.clientWidth;
+        if (max > 4) {
+          let next = rail.scrollLeft + autoDirection * AUTO_SPEED * dt;
+          if (next >= max) { next = max; autoDirection = -1; }
+          else if (next <= 0) { next = 0; autoDirection = 1; }
+          rail.scrollLeft = next;
+        }
+      }
+      autoFrame = requestAnimationFrame(autoStep);
+    };
     const onDown = (event: PointerEvent) => {
       stop();
+      pauseAuto();
       if (event.pointerType !== "mouse" || event.button !== 0) return;
       down = true;
       dragged = false;
@@ -63,6 +93,7 @@ export function usePolaroidRail() {
       if (!down) return;
       down = false;
       rail.classList.remove("is-dragging");
+      resumeAutoAfter(900);
       if (!dragged || reduced.matches || performance.now() - time > 100) return;
       let previous = performance.now();
       const coast = (now: number) => {
@@ -79,27 +110,41 @@ export function usePolaroidRail() {
       if (dragged && event.detail !== 0) { event.preventDefault(); event.stopPropagation(); dragged = false; }
     };
     const preventDrag = (event: DragEvent) => event.preventDefault();
+    const onTouchEnd = () => resumeAutoAfter(900);
+    const onWheel = () => { stop(); pauseAuto(); resumeAutoAfter(1200); };
+    const onEnter = () => pauseAuto();
+    const onLeave = () => { if (!down) resumeAutoAfter(400); };
     rail.addEventListener("pointerdown", onDown);
     window.addEventListener("pointermove", onMove);
     window.addEventListener("pointerup", release);
     window.addEventListener("pointercancel", release);
+    window.addEventListener("pointerup", onTouchEnd);
+    window.addEventListener("pointercancel", onTouchEnd);
     rail.addEventListener("click", click, true);
     rail.addEventListener("dragstart", preventDrag);
     rail.addEventListener("scroll", schedule, { passive: true });
-    rail.addEventListener("wheel", stop, { passive: true });
+    rail.addEventListener("wheel", onWheel, { passive: true });
+    rail.addEventListener("pointerenter", onEnter);
+    rail.addEventListener("pointerleave", onLeave);
     const resize = new ResizeObserver(schedule);
     resize.observe(rail);
     paint();
+    autoFrame = requestAnimationFrame(autoStep);
     return () => {
-      stop(); cancelAnimationFrame(frame); resize.disconnect();
+      stop(); cancelAnimationFrame(frame); cancelAnimationFrame(autoFrame); resize.disconnect();
+      if (resumeTimer) window.clearTimeout(resumeTimer);
       rail.removeEventListener("pointerdown", onDown);
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerup", release);
       window.removeEventListener("pointercancel", release);
+      window.removeEventListener("pointerup", onTouchEnd);
+      window.removeEventListener("pointercancel", onTouchEnd);
       rail.removeEventListener("click", click, true);
       rail.removeEventListener("dragstart", preventDrag);
       rail.removeEventListener("scroll", schedule);
-      rail.removeEventListener("wheel", stop);
+      rail.removeEventListener("wheel", onWheel);
+      rail.removeEventListener("pointerenter", onEnter);
+      rail.removeEventListener("pointerleave", onLeave);
     };
   }, []);
   return ref;
