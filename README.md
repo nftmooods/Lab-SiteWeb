@@ -1,4 +1,21 @@
-# Mooods — Lab Website
+# Strates Digitales Lab — Le journal de Mooods
+
+## Direction actuelle — septembre 2026
+
+Le site est **Strates Digitales Lab**, le laboratoire de **Martin Lisen**.
+**Mooods est uniquement la mascotte et le narrateur** : il tient le journal des
+explorations de son humain. Le nom `nook` de certains fichiers est un héritage,
+pas un second personnage dans la nouvelle page.
+
+La home utilise désormais des scènes pleine largeur, des bandes de papier texturé
+aux bords déchirés, des polaroids et des annotations manuscrites. Les projets et
+notes s’ouvrent sur place. Leur contenu provient de `src/content/site.ts`.
+Les styles de cette version sont dans `src/styles/journal.css`.
+
+Cette direction remplace l’ancienne répartition des rôles dans les documents
+historiques ci-dessous. Le site local n’est pas automatiquement publié.
+
+## Cadrage historique
 
 Le site et le design system de **Mooods**, l'atelier personnel d'un créateur qui explore
 la 3D, l'IA, l'art, le jeu et les nouvelles façons de construire des mondes.

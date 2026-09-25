@@ -1,10 +1,12 @@
-/** Mooods brand constants. Import these instead of retyping strings. */
+/** Strates Digitales Lab. Martin creates; Mooods, the mascot, narrates. */
 
 export const BRAND = {
-  name: "Mooods",
-  what: "L'atelier personnel d'un créateur qui explore la 3D, l'IA, l'art, le jeu et les nouvelles façons de construire des mondes.",
-  idea: "Je construis des choses pour voir jusqu'où elles peuvent aller.",
-  ideaEn: "I build things to see what happens.",
+  name: "Strates Digitales Lab",
+  human: "Martin Lisen",
+  narrator: "Mooods",
+  what: "Les explorations de Martin Lisen, racontées par Mooods, la mascotte du labo.",
+  idea: "Mon humain a encore eu une idée.",
+  ideaEn: "My human has another idea.",
   threeWords: "Explore. Build. Share.",
   taglines: [
     "Same curiosity, different worlds.",
@@ -35,9 +37,9 @@ export type TagKind =
 
 export const CHARACTERS = {
   nook: {
-    role: "L'explorateur — avatar de Mooods, aussi PFP",
+    role: "Mooods — mascotte et narrateur de Strates Digitales Lab (asset historique nommé nook)",
     always: "En train de faire quelque chose : observer, chercher, lire, dessiner, construire, manipuler, tester, réparer, regarder un résultat.",
-    never: "Pose héroïque, sourire mascotte, expression kawaii, esthétique gaming générique, première personne à la place de Mooods.",
+    never: "Se présenter comme Martin ou comme le créateur des projets. Mooods raconte ce que son humain fait.",
     look: "Cheveux bruns en pointes à reflets cyan, yeux bleus, goggles orange à verres cyan, veste cuir ambre sur hoodie rouge, gant tech bleu, sac à dos à module lumineux.",
   },
   m3ods: {
@@ -49,9 +51,9 @@ export const CHARACTERS = {
 } as const;
 
 export const VOICE = {
-  do: ["Curieux avant expert", "Concret", "Court", "Chaleureux, pas cute", "Observateur, jamais gourou"],
+  do: ["Tutoiement partout", "Familier et complice", "Phrases parlées, mots simples", "Petites remarques amusées de la mascotte", "Martin fait, Mooods raconte", "Pas de résultats ou d’anecdotes inventés"],
   words: ["Explore","Build","Play","Discover","Show","Field Notes","Workshop","Experiment","Prototype","Build Log","Archive","Sketch","Test","Make"],
   sparingly: ["Protocol","System","Quest","Level","Lore","Cyber","Hacker","NFT"],
-  yes: "J'ai testé cette méthode pour voir si l'IA pouvait m'aider à construire la scène.",
+  yes: "Martin, c’est mon humain. Il a l’air sérieux en formation, mais au labo, c’est un artiste. Viens, je te montre ce qu’il bricole.",
   no: "Voici la meilleure façon d'utiliser l'IA pour créer en 3D.",
 } as const;

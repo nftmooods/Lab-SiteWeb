@@ -3,9 +3,11 @@
  *  rather than fabricating a number, a date, a price or a quote. */
 
 export const AUTHOR = {
-  name: "Mooods",
-  who: "Je construis des choses pour voir jusqu'où elles peuvent aller. 3D, IA, jeux, images, objets — surtout des choses que je ne sais pas encore faire.",
-  elsewhere: "Mon activité professionnelle (formation et conseil en IA) vit ailleurs. Ici, c'est l'atelier.",
+  name: "Martin Lisen",
+  narrator: "Mooods",
+  lab: "Strates Digitales Lab",
+  who: "Martin Lisen, c’est mon humain. Formateur et accompagnateur d’entreprises quand il a l’air sérieux, artiste quand il est au labo. Moi, Mooods, je te raconte ses tests, ses créations et ses ratés.",
+  elsewhere: "Ici, c’est le labo. Installe-toi, je te montre ce que Martin bricole.",
   channels: [
     { label: "X — le build", handle: "@nftM3ods", url: "https://x.com/nftM3ods", note: "publié par M3ODS, en anglais" },
     { label: "X — la discussion", handle: "@nftmooods", url: "https://x.com/nftmooods" },
@@ -26,7 +28,7 @@ export const PROJECTS: Project[] = [
     kicker: "Addon Blender · Geometry Nodes",
     status: "wip",
     version: "v0.3",
-    pitch: "Un générateur de ruines en Geometry Nodes : on prend un bâtiment, on décide à quel point le temps est passé dessus.",
+    pitch: "Martin fabrique un outil Blender pour transformer des bâtiments en ruines. Tu choisis à quel point ils ont vieilli, et les murs se fissurent. Bon, pour les portes, il reste un peu de boulot.",
     works: ["Les murs se fissurent proprement", "Les paramètres tiennent d'une version de Blender à l'autre"],
     broken: ["Les portes traversent encore le sol", "Les toits ne sont pas commencés"],
     next: "Les toits.",
@@ -39,7 +41,7 @@ export const PROJECTS: Project[] = [
     title: "PxGrove",
     kicker: "Jeu web · pixels",
     status: "live",
-    pitch: "Un jeu où on plante des pixels et on regarde ce qui pousse. Pensé pour quelqu'un qui n'a jamais touché à la blockchain.",
+    pitch: "Là, il fait pousser des pixels. Oui, oui. Tu plantes, tu regardes ce qui pousse, et tu joues directement dans ton navigateur. Pas besoin d’y connaître quoi que ce soit en blockchain.",
     works: ["Jouable dans le navigateur", "Sauvegardes locales"],
     broken: ["Pas encore de multijoueur", "L'équilibrage des variétés est à refaire"],
     next: "[À COMPLÉTER]",
@@ -58,21 +60,21 @@ export type Note = {
 export const NOTES: Note[] = [
   {
     number: "09", slug: "atelier-avant-personnage",
-    title: "J'ai essayé de construire une scène sans commencer par le personnage.",
+    title: "Cette fois, Martin a commencé par le décor. Pas par moi.",
     meta: "blender · geometry nodes · 2 soirées · résultat : partiel",
-    takeaway: "Le décor raconte plus que je ne pensais. Prochain test : une scène complète sans Nook du tout.",
+    takeaway: "D’habitude, il commence par le personnage. Là, il a attaqué le décor. Et tu sais quoi ? Ça raconte déjà pas mal de choses sans moi au milieu. Il veut même tenter une scène où je n’apparais pas du tout. Bon. Je vais essayer de ne pas le prendre personnellement.",
   },
   {
     number: "08", slug: "monde-avant-de-savoir",
-    title: "Je voulais voir si une IA pouvait dessiner un monde avant que je sache ce que c'était.",
+    title: "Il ne savait pas quoi dessiner. Alors il a demandé à l’IA.",
     meta: "IA image → 3D · 6 itérations · ouvert",
-    takeaway: "Deux images gardées, une qui a fini en île flottante. Partir du flou marche mieux que partir d'un brief.",
+    takeaway: "Six essais, deux images gardées, et l’une a fini en île flottante. Il ne savait pas vraiment où il allait au départ. Pour une fois, ça l’a bien aidé. Comme quoi, on n’est pas obligé d’avoir tout prévu avant de se lancer.",
   },
   {
     number: "07", slug: "le-rig-non",
     title: "Le rendu tient. Le rig, non.",
     meta: "3D · raté utile",
-    takeaway: "J'ai posé le personnage avant de comprendre comment il devait bouger. À refaire dans l'autre sens.",
+    takeaway: "Sur l’image, tout va bien. Dès qu’il faut faire bouger le personnage, ça se complique. Martin avait préparé la pose avant de régler le rig, le squelette qui permet de l’animer. La prochaine fois, on fait ça dans l’autre sens. Je le note, histoire qu’il n’oublie pas.",
     project: "ruinator",
   },
 ];

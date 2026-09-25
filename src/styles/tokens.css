@@ -2,10 +2,17 @@
    One role per colour. Never all of them at once. */
 
 :root {
+  /* Strates Digitales v3: restrained brand accents within the warm notebook. */
+  --brand-off: #F5F4EF;
+  --brand-grey: #E8E6E1;
+  --brand-charcoal: #232525;
+  --brand-turquoise: #068296;
+  --brand-turquoise-deep: #045B6B;
+  --brand-signal: #5FE0D0;
   /* ---- Light world: the notebook page (style « Carnet », see docs/02) ---- */
   --paper:        #F2EBDD;  /* cream paper — the torn notebook bands */
   --paper-2:      #E8DFCD;  /* denser paper, fold shadows */
-  --paper-ink:    #241B12;  /* text on paper: very dark brown, never black */
+  --paper-ink:    var(--brand-charcoal);
   --paper-ink-2:  #5A4A3A;  /* secondary text on paper */
   --pencil:       #9A8C7A;  /* pencil line-art, rules, background sketches */
 
@@ -18,7 +25,7 @@
   /* ---- Accents: one role each ---- */
   --cyan:         #2FD3E6;  /* technology, information, exploration (surfaces) */
   --cyan-deep:    #0FA9BD;  /* cyan TEXT on light backgrounds — short labels only */
-  --orange:       #F28C1E;  /* action, creation, CTA — one orange button per screen */
+  --orange:       #F78312;  /* Strates Digitales action accent */
   --orange-deep:  #C96A08;  /* hover, orange text on light */
   --red:          #D8413F;  /* error, alert — <= 5% of the surface */
   --glow:         #3A9BFF;  /* focus, active state, LIVE, M3ODS's eyes */
@@ -36,7 +43,7 @@
   --font-display: "Bricolage Grotesque", "Arial Black", Impact, sans-serif;
   --font-serif:   "Instrument Serif", Georgia, "Times New Roman", serif;
   --font-body:    "Onest", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-mono:    "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+  --font-mono:    "Fragment Mono", "SFMono-Regular", Consolas, monospace;
   --font-hand:    "Caveat", "Segoe Print", cursive;   /* margin annotations */
 
   /* Type scale (fluid where it matters) */
